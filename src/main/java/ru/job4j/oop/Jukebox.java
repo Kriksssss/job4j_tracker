@@ -12,9 +12,9 @@ public class Jukebox {
     }
 
     public static void main(String[] args) {
-        Jukebox james = new Jukebox();
-        james.music(1);
-        james.music(2);
-        james.music(3);
+        Jukebox jame = new Jukebox();
+        jame.music(1);
+        jame.music(2);
+        jame.music(3);
     }
 }
