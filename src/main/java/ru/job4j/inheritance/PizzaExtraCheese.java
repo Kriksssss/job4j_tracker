@@ -1,10 +1,10 @@
 package ru.job4j.inheritance;
 
 public class PizzaExtraCheese extends Pizza {
-    String Cheese = " + extra cheese";
+    String cheese = " + extra cheese";
 
     @Override
     public String name() {
-        return super.name() + Cheese;
+        return super.name() + cheese;
     }
 }
