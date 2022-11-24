@@ -6,10 +6,7 @@ public class StartUI extends Item {
     public static void main(String[] args) {
         Item it = new Item();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
-        String x = it.getCreated().format(formatter);
-        System.out.println(x);
-
-
-
+        String k = it.getCreated().format(formatter);
+        System.out.println(k);
     }
 }
