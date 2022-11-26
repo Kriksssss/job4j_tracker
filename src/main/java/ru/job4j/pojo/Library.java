@@ -22,7 +22,7 @@ public class Library {
         }
      System.out.println("  Книги с именем Clean code");
         for (Book out : mass) {
-            if (out.getName().equals("Clean code")) {
+            if ("Clean code".equals(out.getName())) {
                 System.out.println(out.getName() + " - " + out.getPages() + " страниц");
             }
         }
