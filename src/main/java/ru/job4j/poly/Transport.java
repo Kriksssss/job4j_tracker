@@ -5,6 +5,6 @@ public interface Transport {
 
     void passengers(int passenger);
 
-    double refuel(double fuel);
+    double refuel(double fuell);
 
 }
