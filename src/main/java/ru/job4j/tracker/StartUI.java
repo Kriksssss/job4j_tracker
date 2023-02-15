@@ -1,15 +1,14 @@
 package ru.job4j.tracker;
 
-
 public class StartUI {
 
     public void init(Input input, Tracker tracker) {
         boolean run = true;
         while (run) {
             showMenu();
-            int select = input.askInt("Select: ");
+            int select = input.askInt("Select:  ");
             if (select == 0) {
-                System.out.println("=== Create a new Item ===");
+                System.out.println("== Create a new Item ==");
                 String name = input.askStr("Enter name: ");
                 Item item = new Item(name);
                 tracker.add(item);
