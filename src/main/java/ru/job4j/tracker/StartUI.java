@@ -33,7 +33,7 @@ public class StartUI {
                 } else {
                     System.out.println("Ошибка замены заявки.");
                 }
-            }  else if (select == 3) {
+            } else if (select == 3) {
                 System.out.println("=== Delete item ===");
                 int id = input.askInt("Enter id: ");
                 if (tracker.delete(id)) {
@@ -41,7 +41,7 @@ public class StartUI {
                 } else {
                     System.out.println("Ошибка удаления заявки.");
                 }
-        } else if (select == 4) {
+            } else if (select == 4) {
                 System.out.println("=== Find item by id ===");
                 int id = input.askInt("Enter id: ");
                 Item item = tracker.findById(id);
@@ -50,18 +50,18 @@ public class StartUI {
                 } else {
                     System.out.println("Заявка с введенным id: " + id + " не найдена.");
                 }
-        } else if (select == 5) {
-            System.out.println("=== Find items by name ===");
-            String name = input.askStr("Enter id: ");
-            Item[] items = tracker.findByName(name);
-            if (items.length > 0) {
-                for (Item item : items) {
-                    System.out.println(item);
+            } else if (select == 5) {
+                System.out.println("=== Find items by name ===");
+                String name = input.askStr("Enter id: ");
+                Item[] items = tracker.findByName(name);
+                if (items.length > 0) {
+                    for (Item item : items) {
+                        System.out.println(item);
+                    }
+                } else {
+                    System.out.println("Заявки с именем: " + name + " не найдены.");
                 }
-            } else {
-                System.out.println("Заявки с именем: " + name + " не найдены.");
-            }
-        } else if (select == 6) {
+            } else if (select == 6) {
                 run = false;
             }
         }
