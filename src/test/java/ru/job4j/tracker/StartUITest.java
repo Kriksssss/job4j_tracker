@@ -36,7 +36,7 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         Item one = tracker.add(new Item("test1"));
         Input in = new StubInput(
-                new String[]{"0", String.valueOf(one.getId()), "1"}
+                new String[]{"0", "1"}
         );
         UserAction[] actions = new UserAction[]{
                 new ShowAllAction(out),
@@ -63,7 +63,7 @@ public class StartUITest {
         Item one = tracker.add(new Item("test1"));
         String byName = "test1";
         Input in = new StubInput(
-                new String[]{"0", byName, String.valueOf(one.getId()),  "1"}
+                new String[]{"0", byName, "1"}
         );
         UserAction[] actions = new UserAction[]{
                 new FindByNameAction(out),
@@ -87,9 +87,8 @@ public class StartUITest {
             Output out = new StubOutput();
             Tracker tracker = new Tracker();
             Item one = tracker.add(new Item("test1"));
-            String byId = "1";
             Input in = new StubInput(
-                    new String[]{"0", byId, String.valueOf(one.getId()), "1"}
+                    new String[]{"0", String.valueOf(one.getId()), "1"}
             );
             UserAction[] actions = new UserAction[]{
                     new FindByIdAction(out),
