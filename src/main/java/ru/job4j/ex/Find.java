@@ -5,8 +5,8 @@ public class Find {
         if (index < 0 || index >= data.length) {
             throw new IllegalArgumentException("Index out of bound");
         }
-            return data[index];
-        }
+        return data[index];
+    }
 
     public static void main(String[] args) {
         String[] data = {"one", "two", "three"};
