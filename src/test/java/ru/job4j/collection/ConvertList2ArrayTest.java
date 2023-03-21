@@ -18,7 +18,7 @@ public class ConvertList2ArrayTest {
                 {4, 5, 6},
                 {7, 0, 0}
         };
-        assertThat(result).isEqualTo(expect);
+        assertThat(result).isDeepEqualTo(expect);
     }
 
     @Test
@@ -32,6 +32,6 @@ public class ConvertList2ArrayTest {
                 {3, 4},
                 {5, 0}
         };
-        assertThat(result).isEqualTo(expect);
+        assertThat(result).isDeepEqualTo(expect);
     }
 }
