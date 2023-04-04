@@ -5,10 +5,10 @@ import java.util.List;
 
 public class FullSearch {
     public static HashSet<String> extractNumber(List<Task> list) {
-        HashSet<String> numbers = new HashSet<>();
+        HashSet<String> number = new HashSet<>();
         for (Task task : list) {
-            numbers.add(task.getNumber());
+            number.add(task.getNumber());
         }
-        return numbers;
+        return number;
     }
 }
