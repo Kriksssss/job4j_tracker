@@ -77,5 +77,4 @@ public class BankService {
     public List<Account> getAccounts(User user) {
         return users.get(user);
     }
-    // проверка доступа
 }
