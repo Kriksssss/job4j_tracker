@@ -13,7 +13,7 @@ public class Job implements Comparable<Job> {
     public String getName() {
         return name;
     }
-    
+
     @Override
     public String toString() {
         return "Job{"
