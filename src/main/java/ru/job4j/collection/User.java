@@ -4,7 +4,6 @@ import java.util.Objects;
 
 public class User implements Comparable<User> {
     private String name;
-
     private int age;
 
     public User(String name, int age) {
@@ -15,10 +14,7 @@ public class User implements Comparable<User> {
     @Override
     public int compareTo(User o) {
         int nameCompare = this.name.compareTo(o.name);
-        if (nameCompare != 0) {
-            return nameCompare;
-        }
-        return Integer.compare(this.age, o.age);
+        return nameCompare != 0 ? nameCompare : Integer.compare(this.age, o.age);
     }
 
     @Override
