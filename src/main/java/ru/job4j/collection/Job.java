@@ -14,10 +14,6 @@ public class Job implements Comparable<Job> {
         return name;
     }
 
-    public int getPriority() {
-        return priority;
-    }
-
     @Override
     public String toString() {
         return "Job{"
