@@ -1,28 +1,40 @@
 package ru.job4j.search;
 
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
+/**
+ * Класс PhoneDictionary представляет собой телефонный справочник, содержащий список абонентов.
+ */
 public class PhoneDictionary {
     private final ArrayList<Person> persons = new ArrayList<>();
 
+    /**
+     * Добавляет абонента в телефонный справочник.
+     *
+     * @param person абонент для добавления
+     */
     public void add(Person person) {
         this.persons.add(person);
     }
 
     /**
-     * Вернуть список всех пользователей, который содержат key в любых полях.
+     * Выполняет поиск абонентов в телефонном справочнике, соответствующих заданному предикату.
      *
-     * @param key Ключ поиска.
-     * @return Список пользователей, которые прошли проверку.
+     * @param predicate предикат для фильтрации абонентов
+     * @return список абонентов, удовлетворяющих предикату
      */
-    public ArrayList<Person> find(String key) {
+    public ArrayList<Person> find(Predicate<Person> predicate) {
         ArrayList<Person> result = new ArrayList<>();
-        for (Person per : persons) {
-            if (per.getPhone().contains(key) || per.getAddress().contains(key)
-                    || per.getName().contains(key) || per.getSurname().contains(key)) {
-                result.add(per);
+        for (Person person : persons) {
+            if (predicate.test(person)) {
+                result.add(person);
             }
         }
         return result;
     }
 }
+
+
+
+

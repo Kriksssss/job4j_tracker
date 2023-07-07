@@ -10,10 +10,8 @@ public class PhoneDictionaryTest {
     @Test
     public void whenFindByName() {
         PhoneDictionary phones = new PhoneDictionary();
-        phones.add(
-                new Person("Petr", "Arsentev", "534872", "Bryansk")
-        );
-        ArrayList<Person> persons = phones.find("Petr");
+        phones.add(new Person("Petr", "Arsentev", "534872", "Bryansk"));
+        ArrayList<Person> persons = phones.find(person -> person.getName().equals("Petr"));
         assertThat(persons.get(0).getSurname()).isEqualTo("Arsentev");
     }
 
@@ -23,7 +21,7 @@ public class PhoneDictionaryTest {
         phones.add(
                 new Person("Petr", "Arsentev", "534872", "Bryansk")
         );
-        ArrayList<Person> persons = phones.find("kkk");
+        ArrayList<Person> persons = phones.find(person -> person.getName().equals("ggg"));
         assertThat(persons.isEmpty()).isTrue();
     }
 }
