@@ -3,9 +3,6 @@ package ru.job4j.search;
 import java.util.ArrayList;
 import java.util.function.Predicate;
 
-/**
- * Класс PhoneDictionary представляет собой телефонный справочник, содержащий список абонентов.
- */
 public class PhoneDictionary {
     private final ArrayList<Person> persons = new ArrayList<>();
 
@@ -19,21 +16,32 @@ public class PhoneDictionary {
     }
 
     /**
-     * Выполняет поиск абонентов в телефонном справочнике, соответствующих заданному предикату.
+     * Выполняет поиск абонентов в телефонном справочнике по ключевому слову.
      *
-     * @param predicate предикат для фильтрации абонентов
-     * @return список абонентов, удовлетворяющих предикату
+     * @param key ключевое слово для поиска
+     * @return список абонентов, удовлетворяющих ключевому слову
      */
-    public ArrayList<Person> find(Predicate<Person> predicate) {
+    public ArrayList<Person> find(String key) {
+        Predicate<Person> namePredicate = person -> person.getName().contains(key);
+        Predicate<Person> surnamePredicate = person -> person.getSurname().contains(key);
+        Predicate<Person> phonePredicate = person -> person.getPhone().contains(key);
+        Predicate<Person> addressPredicate = person -> person.getAddress().contains(key);
+
+        Predicate<Person> combine = namePredicate
+                .or(surnamePredicate)
+                .or(phonePredicate)
+                .or(addressPredicate);
+
         ArrayList<Person> result = new ArrayList<>();
         for (Person person : persons) {
-            if (predicate.test(person)) {
+            if (combine.test(person)) {
                 result.add(person);
             }
         }
         return result;
     }
 }
+
 
 
 
