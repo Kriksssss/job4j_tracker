@@ -18,9 +18,6 @@ public class NonCollisionMap<K, V> implements SimpleMap<K, V> {
     private MapEntry<K, V>[] table = new MapEntry[capacity];
 
     private int hash(int hashCode) {
-        hashCode ^= (hashCode >>> 16);
-        hashCode ^= (hashCode >>> 8);
-        hashCode ^= (hashCode >>> 4);
         return hashCode & (capacity - 1);
     }
 
